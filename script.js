@@ -6,7 +6,6 @@ let chosenCards = [];
 let chosenIndexes = [];
 let matchedPairs = 0;
 
-// Function to shuffle cards
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -15,7 +14,6 @@ function shuffle(array) {
     return array;
 }
 
-// Function to create and display cards
 function createCards() {
     const shuffledCards = shuffle(cardsArray.concat(cardsArray));
     shuffledCards.forEach((card, index) => {
@@ -28,7 +26,6 @@ function createCards() {
     });
 }
 
-// Function to handle card click
 function handleCardClick() {
     if (chosenCards.length < 2 && !chosenIndexes.includes(this.dataset.index)) {
         chosenCards.push(this);
@@ -42,7 +39,6 @@ function handleCardClick() {
     }
 }
 
-// Function to check if chosen cards match
 function checkMatch() {
     const [card1, card2] = chosenCards;
 
